@@ -1,0 +1,8 @@
+{/section name=i loop=$list/}
+<tr>
+  <td><u>{/if $list[i].type eq 1/}功能建议{//if/}{/if $list[i].type eq 2/}BUG反馈{//if/}{/if $list[i].type eq 3/}随便说说{//if/}</u></td>
+  <td>{/$list[i].nickname/}:{/$list[i].intro|nl2br/}</td>
+  <td class="gray6">{/$list[i].dateline|date_format:"%m/%d %H:%M:%S"/}</td>
+  <td>{/if $list[i].replay/}<i>齐迹：{/$list[i].replay|nl2br/}</i><s class="gray6">({/$list[i].replaytime|date_format:"%m/%d %H:%M:%S"/})</s>{/else/}暂未回复{//if/}</td>
+</tr>
+{//section/}
